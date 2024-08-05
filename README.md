@@ -19,3 +19,11 @@ Core содержит базу данных(PostgeSQL) в которой хра�
 ![image](https://github.com/user-attachments/assets/40b1c468-c078-4712-b91b-08740430499e)
 ## Устаовка MaxPatrol SIEM
 ![image](https://github.com/user-attachments/assets/abe889c2-772a-42f3-bc59-2f3add805f2d)
+Проверить запущенные сервисы, которые сидят в докер контейнере, перезапустить контейнер:
+```
+sudo docker ps
+sudo docker restart $(sudo docker ps | awk '/licensing/{print $NF}') 
+sudo docker restart $(sudo docker ps | awk '$NF~"core-|kb-"{print $NF}') #всё что имеет в название core или kb
+```
+Host discovery - проверяет только жив или нет
+Inventory discovery - больше портов и пытается определить OS
