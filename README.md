@@ -25,12 +25,13 @@ sudo docker ps
 sudo docker restart $(sudo docker ps | awk '/licensing/{print $NF}') 
 sudo docker restart $(sudo docker ps | awk '$NF~"core-|kb-"{print $NF}') #всё что имеет в название core или kb
 ```
-Host discovery - проверяет только жив или нет
-Inventory discovery - больше портов и пытается определить OS
-Host.OsName like 'WIndows%' # % как * в линукс
-Host.OsName match 'Debian|Ubuntu|RedHat|Mandr(ake|iva)' # регулярка которая будет искать совпадение: дебиан или убунту или Mandrake или Mandriva
-Host.@IPAddresses.Item in 10.0.1.64/26 # показывает все хосты в подсетке
-Host.Softs[Name = 'OpenSSL' and @VULNERS ] # ищем софт OpenSSL и чтобы он был уязвимым(@VULNERS = уязвимость true)
-Host.@Vulners.CVEs intersect ['CVE-2017-0143', 'CVE-2017-0144'] хост должен быть подвержен обеим уязвимостям, тогда возвращает true
-Host.@Vulners.CVEs.Item match "CVE-2017-014[3-8]" match работает с регуляркой, т.е будет искать хост где есть все уязвимости с 0143 по 0148
-Host.@Vulners.CVSS3TEMPORALVECTOR like "E:F%"
+
+Host discovery - проверяет только жив или нет  
+Inventory discovery - больше портов и пытается определить OS  
+Host.OsName like 'WIndows%' # % как * в линукc  
+Host.OsName match 'Debian|Ubuntu|RedHat|Mandr(ake|iva)' # регулярка которая будет искать совпадение: дебиан или убунту или Mandrake или Mandriva  
+Host.@IPAddresses.Item in 10.0.1.64/26 # показывает все хосты в подсеткe  
+Host.Softs[Name = 'OpenSSL' and @VULNERS ] # ищем софт OpenSSL и чтобы он был уязвимым(@VULNERS = уязвимость true)  
+Host.@Vulners.CVEs intersect ['CVE-2017-0143', 'CVE-2017-0144'] хост должен быть подвержен обеим уязвимостям, тогда возвращает true  
+Host.@Vulners.CVEs.Item match "CVE-2017-014[3-8]" match работает с регуляркой, т.е будет искать хост где есть все уязвимости с 0143 по 0148  
+Host.@Vulners.CVSS3TEMPORALVECTOR like "E:F%"  
