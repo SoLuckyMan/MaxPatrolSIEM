@@ -37,21 +37,21 @@ Host.@Vulners.CVEs.Item match "CVE-2017-014[3-8]" match работает с ре
 Host.@Vulners.CVSS3TEMPORALVECTOR like "E:F%"  
 ## Таксономия  
 ![image](https://github.com/user-attachments/assets/d3d62efe-ea22-4ebc-8aa8-008607378dd3)  
-Поле body - raw(сырое) событие string  
-Historical обязательное поле - true - устаревшее событие, false - Обычное; boolean  
-Generator.version - версия компонента, от которого пришло событие string  
-Generator.type - названние компонента, от которого пришло событие enum  
-normolized - true/false нормализация bool  
-recv_host - название узла, от куда пришло событие(string) "Name1" string  
-recv_ipv4 - ipv4 узла, от которого получено событие(если стоит наттранслятор, то будет его айпи) IPAddress  
-tag - модуль агента, получившего необработанное событие, например, tag="syslog" string  
-recv_time - время поллучения события агетом MaxPatrol SIEM DateTime  
+Поле body - raw(сырое) событие тип string  
+Historical обязательное поле - true - устаревшее событие, false - Обычное; тип boolean  
+Generator.version - версия компонента, от которого пришло событие тип string  
+Generator.type - названние компонента, от которого пришло событие тип enum  
+normolized - true/false нормализация тип bool  
+recv_host - название узла, от куда пришло событие(string) "Name1" тип string  
+recv_ipv4 - ipv4 узла, от которого получено событие(если стоит наттранслятор, то будет его айпи) тип IPAddress  
+tag - модуль агента, получившего необработанное событие, например, tag="syslog" тип string  
+recv_time - время поллучения события агетом MaxPatrol SIEM тип DateTime  
 id - идентификаитор правил нормализации и корреляции, значение может быть неуникальным, тип string 
 id="Название_Поставщик_Продукт_Транспорт_Тип события_Описание события"
 id="PT_Tagillnstruments_Coffeemaker_Syslog_brew_request_queued"  
-importance - info. low, medium. high, заполняется автоматически исходя из id enum  
-correlation_name - название правила корреляции, с помощью которого выявлено событие string  
-aggregation_name - название правила агреггации string  
+importance - info. low, medium. high, заполняется автоматически исходя из id тип enum  
+correlation_name - название правила корреляции, с помощью которого выявлено событие тип string  
+aggregation_name - название правила агреггации тип string  
 correlation_type = enum event or incedent  
 
 
