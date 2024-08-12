@@ -46,12 +46,13 @@ recv_host - название узла, от куда пришло событие
 recv_ipv4 - ipv4 узла, от которого получено событие(если стоит наттранслятор, то будет его айпи) IPAddress  
 tag - модуль агента, получившего необработанное событие, например, tag="syslog" string  
 recv_time - время поллучения события агетом MaxPatrol SIEM DateTime  
-id - идентификаитор правил нормализации и корреляции, значение может быть неуникальным, тип string  
-![image](https://github.com/user-attachments/assets/ffb34a79-645f-4e23-a693-b5d722857458)  
+id - идентификаитор правил нормализации и корреляции, значение может быть неуникальным, тип string 
+id="Название_Поставщик_Продукт_Транспорт_Тип события_Описание события"
+id="PT_Tagillnstruments_Coffeemaker_Syslog_brew_request_queued"  
 importance - info. low, medium. high, заполняется автоматически исходя из id enum  
 correlation_name - название правила корреляции, с помощью которого выявлено событие string  
 aggregation_name - название правила агреггации string  
-correlation_type = enum event or incedent
+correlation_type = enum event or incedent  
 
 
 
